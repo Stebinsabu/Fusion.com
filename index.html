@@ -32,11 +32,11 @@
                      <div>
                         <label for="Male">
                          <span>Male</span>
-                         <input type="radio" name="Gender" id="Male" value="Male">
+                         <input type="radio" name="Gender" id="Male" value="Male" required>
                       </label>
                        <label for="Female">
                          <span>Female</span>
-                         <input type="radio" name="Gender" id="Female" value="Female">
+                         <input type="radio" name="Gender" id="Female" value="Female" required>
                         </label>
                     </div>
                   <div class="form-group mb-3">
@@ -48,18 +48,19 @@
                   <div>
                    <label for="Online">
                       <span>Online</span>
-                      <input type="radio" name="Payment" id="Online" value="Online">
-                       <a href="upi://pay?pa=stebinsabu40503@oksbi&amp;pn=FNAME SNAME K&amp; cu=INR">Pay Now</a>
+                      <input type="radio" name="Payment" id="Online" value="Online" checked>
+                      <a href="upi://pay?pa=stebinsabu40503@oksbi&amp;pn=FNAME SNAME K&amp; cu=INR">Pay Now</a>
                    </label>
                   <label for="Offline">
                       <span>Offline</span>
-                      <input type="radio" name="Payment" id="Offline" value="Offline">
+                      <input type="radio" name="Payment" id="Offline" value="Offline" required>
                   </label>
                </div>
 
                     <div>
                         <button class="btn btn-primary me-2" type="submit">Register</button>
                         <button class="btn btn-danger" type="reset">Reset</button>
+                        
                     </div>
                 </form>
             </div>
@@ -75,7 +76,7 @@
         form.addEventListener('submit', e => {
             e.preventDefault()
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => $("#form_alerts").html("<div class='alert alert-success'>You have ben sucessfully registered for fusion.</div>"))
+            .then(response => $("#form_alerts").html("<div class='alert alert-success'>You have been sucessfully registered for fusion.</div>"))
             .catch(error => $("#form_alerts").html("<div class='alert alert-danger'>Contact message not sent.</div>"))
         })
     </script>
